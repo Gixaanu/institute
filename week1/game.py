@@ -10,6 +10,8 @@ dt = 0
 
 player_pos = pygame.Vector2(screen.get_width() / 2, screen.get_height() / 2)
 
+
+# GAME LOOP
 while running:
     # poll for events
     # pygame.QUIT event means the user clicked X to close your window
@@ -21,9 +23,10 @@ while running:
     screen.fill("purple")
 
     pygame.draw.circle(screen, "white", player_pos, 40)
+    #pygame.draw.rect(screen, "pink", player_pos + (0,0), 40)
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
+    if keys[pygame.K_w] or keys[pygame.K_UP]:
         player_pos.y -= 300 * dt
     if keys[pygame.K_s]:
         player_pos.y += 300 * dt
